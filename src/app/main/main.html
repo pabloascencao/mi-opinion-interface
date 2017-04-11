@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div>
+    <acme-navbar></acme-navbar>
+  </div>
+  <div class="hero">
+    <img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAjrAAAAJDMzNTFhY2VhLWQ0ZWItNGIzNy05MjBiLTZmOGI3YmQ4YmFlNg.jpg" alt="">
+    <div class="content">
+      <h1>Tu Opinion .com</h1>
+      <p>Este es tu sitio para que puedas opinar de lo que quieras, productos,
+        lugares, personas publicas y todo lo que se te ocurra. Podes cargar algo
+        nuevo u opinar de algo que ya este cargado.</p>
+        <p>La idea es que puedas ayudar a otros a la hora de comprar un producto o
+          ir a algún lugar o realizar una actividad.</p>
+        <p>Tratando de ser respetuoso y hacerte cargo de tus palabras.</p>
+        <span class="main-stars">
+          <i ng-repeat="star in [1,2,3,4,5]" class="star glyphicon" ng-class="5 >= star ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+        </span>
+    </div>
+  </div>
+  <ul class="posts-list row">
+    <li ng-repeat="posts in main.posts" class="col-md-4 col-sm-4">
+      <a ui-sref="home" class="card">
+        <span class="image-container" style="background-image: url('{{posts.img}}');" align="middle" ng-src="" alt="">
+        </span>
+        <div class="content">
+          <h3>{{posts.title}}</h3>
+          <p>{{posts.description}}</p>
+          <span>
+            <i ng-repeat="star in [1,2,3,4,5]" class="star glyphicon" ng-class="posts.value >= star ? 'glyphicon-star' : 'glyphicon-star-empty'"></i>
+          </span>
+        </div>
+      </a>
+    </li>
+
+  </ul>
+
+</div>
